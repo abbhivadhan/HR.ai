@@ -1,0 +1,61 @@
+{
+  "navigation": {
+    "home": "Inicio",
+    "dashboard": "Panel",
+    "jobs": "Empleos",
+    "assessments": "Evaluaciones",
+    "interviews": "Entrevistas",
+    "profile": "Perfil",
+    "settings": "Configuración",
+    "logout": "Cerrar sesión"
+  },
+  "buttons": {
+    "save": "Guardar",
+    "cancel": "Cancelar",
+    "submit": "Enviar",
+    "edit": "Editar",
+    "delete": "Eliminar",
+    "back": "Atrás",
+    "next": "Siguiente",
+    "previous": "Anterior",
+    "close": "Cerrar",
+    "loading": "Cargando...",
+    "retry": "Reintentar"
+  },
+  "forms": {
+    "required": "Este campo es obligatorio",
+    "email": "Por favor ingrese un email válido",
+    "password": "La contraseña debe tener al menos 8 caracteres",
+    "confirmPassword": "Las contraseñas no coinciden",
+    "phone": "Por favor ingrese un número de teléfono válido"
+  },
+  "messages": {
+    "success": "Operación completada exitosamente",
+    "error": "Ocurrió un error. Por favor intente nuevamente.",
+    "noData": "No hay datos disponibles",
+    "loading": "Cargando...",
+    "offline": "Actualmente está desconectado",
+    "networkError": "Error de red. Por favor verifique su conexión."
+  },
+  "accessibility": {
+    "skipToContent": "Saltar al contenido principal",
+    "menu": "Menú",
+    "search": "Buscar",
+    "close": "Cerrar",
+    "open": "Abrir",
+    "loading": "Cargando",
+    "error": "Error",
+    "success": "Éxito"
+  },
+  "time": {
+    "seconds": "segundos",
+    "minutes": "minutos",
+    "hours": "horas",
+    "days": "días",
+    "weeks": "semanas",
+    "months": "meses",
+    "years": "años",
+    "ago": "hace",
+    "remaining": "restante"
+  }
+}

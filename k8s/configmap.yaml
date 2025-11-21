@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ai-hr-platform-config
+  namespace: ai-hr-platform
+data:
+  DATABASE_URL: "postgresql://postgres:password@postgres-service:5432/ai_hr_platform"
+  REDIS_URL: "redis://redis-service:6379"
+  MONGODB_URL: "mongodb://mongodb-service:27017/ai_hr_platform"
+  ENVIRONMENT: "production"
+  LOG_LEVEL: "INFO"
+  CORS_ORIGINS: "https://ai-hr-platform.com"
+  API_VERSION: "v1"
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: ai-hr-platform-secrets
+  namespace: ai-hr-platform
+type: Opaque
+stringData:
+  JWT_SECRET_KEY: "your-jwt-secret-key-here"
+  DATABASE_PASSWORD: "your-database-password"
+  REDIS_PASSWORD: "your-redis-password"
+  OPENAI_API_KEY: "your-openai-api-key"
+  EMAIL_PASSWORD: "your-email-password"
+  ENCRYPTION_KEY: "your-encryption-key"

@@ -1,0 +1,61 @@
+{
+  "navigation": {
+    "home": "Home",
+    "dashboard": "Dashboard",
+    "jobs": "Jobs",
+    "assessments": "Assessments",
+    "interviews": "Interviews",
+    "profile": "Profile",
+    "settings": "Settings",
+    "logout": "Logout"
+  },
+  "buttons": {
+    "save": "Save",
+    "cancel": "Cancel",
+    "submit": "Submit",
+    "edit": "Edit",
+    "delete": "Delete",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "close": "Close",
+    "loading": "Loading...",
+    "retry": "Retry"
+  },
+  "forms": {
+    "required": "This field is required",
+    "email": "Please enter a valid email address",
+    "password": "Password must be at least 8 characters",
+    "confirmPassword": "Passwords do not match",
+    "phone": "Please enter a valid phone number"
+  },
+  "messages": {
+    "success": "Operation completed successfully",
+    "error": "An error occurred. Please try again.",
+    "noData": "No data available",
+    "loading": "Loading...",
+    "offline": "You are currently offline",
+    "networkError": "Network error. Please check your connection."
+  },
+  "accessibility": {
+    "skipToContent": "Skip to main content",
+    "menu": "Menu",
+    "search": "Search",
+    "close": "Close",
+    "open": "Open",
+    "loading": "Loading",
+    "error": "Error",
+    "success": "Success"
+  },
+  "time": {
+    "seconds": "seconds",
+    "minutes": "minutes",
+    "hours": "hours",
+    "days": "days",
+    "weeks": "weeks",
+    "months": "months",
+    "years": "years",
+    "ago": "ago",
+    "remaining": "remaining"
+  }
+}

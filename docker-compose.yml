@@ -1,0 +1,89 @@
+version: '3.8'
+
+services:
+  # PostgreSQL Database
+  postgres:
+    image: postgres:15-alpine
+    container_name: ai-hr-postgres
+    environment:
+      POSTGRES_DB: ai_hr_platform
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - ai-hr-network
+
+  # Redis Cache
+  redis:
+    image: redis:7-alpine
+    container_name: ai-hr-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - ai-hr-network
+
+  # MongoDB
+  mongodb:
+    image: mongo:7
+    container_name: ai-hr-mongodb
+    environment:
+      MONGO_INITDB_DATABASE: ai_hr_platform
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+    networks:
+      - ai-hr-network
+
+  # Backend API
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: ai-hr-backend
+    ports:
+      - "8000:8000"
+    environment:
+      DATABASE_URL: postgresql://postgres:password@postgres:5432/ai_hr_platform
+      REDIS_URL: redis://redis:6379/0
+      MONGODB_URL: mongodb://mongodb:27017/ai_hr_platform
+    volumes:
+      - ./backend:/app
+    depends_on:
+      - postgres
+      - redis
+      - mongodb
+    networks:
+      - ai-hr-network
+
+  # Frontend
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: ai-hr-frontend
+    ports:
+      - "3000:3000"
+    environment:
+      NEXT_PUBLIC_API_URL: http://localhost:8000
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    depends_on:
+      - backend
+    networks:
+      - ai-hr-network
+
+volumes:
+  postgres_data:
+  redis_data:
+  mongodb_data:
+
+networks:
+  ai-hr-network:
+    driver: bridge

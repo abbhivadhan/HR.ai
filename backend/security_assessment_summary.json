@@ -1,0 +1,17 @@
+{
+  "timestamp": "Sun Oct 26 18:41:05 IST 2025",
+  "total_issues": 9,
+  "high_severity": 0,
+  "medium_severity": 0,
+  "low_severity": 9,
+  "tools_run": [
+    "bandit"
+  ],
+  "recommendations": [
+    "Review and fix identified security issues",
+    "Regularly update dependencies to patch security vulnerabilities",
+    "Implement security monitoring and alerting",
+    "Conduct regular security assessments",
+    "Train developers on secure coding practices"
+  ]
+}
