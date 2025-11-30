@@ -1,8 +1,3 @@
-#!/usr/bin/env python3
-"""
-Simple FastAPI server for testing login functionality with Google OAuth support
-"""
-
 from fastapi import FastAPI, HTTPException, status, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import RedirectResponse
