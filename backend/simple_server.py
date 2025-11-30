@@ -227,6 +227,53 @@ async def list_users():
         ]
     }
 
+# Dashboard endpoints
+@app.get("/api/dashboard/company/analytics")
+async def get_company_analytics():
+    """Get company dashboard analytics (demo data)"""
+    return {
+        "job_postings": {
+            "total": 8,
+            "active": 5,
+            "filled": 2,
+            "expired": 1
+        },
+        "applications": {
+            "total": 156,
+            "pending": 23,
+            "reviewed": 45,
+            "shortlisted": 18,
+            "hired": 12
+        },
+        "candidates": {
+            "total_viewed": 1250,
+            "average_score": 78.5,
+            "top_skills": ["JavaScript", "React", "Python", "Node.js", "AWS"]
+        },
+        "performance": {
+            "average_time_to_hire": 21,
+            "application_rate": 15.6,
+            "interview_to_hire_ratio": 0.38
+        }
+    }
+
+@app.get("/api/dashboard/candidate-insights")
+async def get_candidate_insights():
+    """Get candidate insights (demo data)"""
+    return {
+        "total_candidates": 1250,
+        "active_candidates": 890,
+        "top_skills": ["JavaScript", "React", "Python", "Node.js", "AWS"],
+        "average_experience": 5.2,
+        "skill_distribution": [
+            {"skill": "JavaScript", "count": 450, "percentage": 36},
+            {"skill": "React", "count": 380, "percentage": 30},
+            {"skill": "Python", "count": 320, "percentage": 26},
+            {"skill": "Node.js", "count": 290, "percentage": 23},
+            {"skill": "AWS", "count": 250, "percentage": 20}
+        ]
+    }
+
 if __name__ == "__main__":
     import uvicorn
     print("=" * 60)

@@ -415,7 +415,7 @@ const CompanyDashboard: React.FC<CompanyDashboardProps> = ({ companyId }) => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
           <StatsCard
             title="Active Jobs"
-            value={analytics?.jobPostings?.active ?? 0}
+            value={analytics.jobPostings.active}
             icon={<BriefcaseIcon className="w-6 h-6" />}
             color="blue"
             change={{ value: 12, type: 'increase', period: 'this month' }}
@@ -423,7 +423,7 @@ const CompanyDashboard: React.FC<CompanyDashboardProps> = ({ companyId }) => {
           />
           <StatsCard
             title="Total Applications"
-            value={analytics?.applications?.total ?? 0}
+            value={analytics.applications.total}
             icon={<UserGroupIcon className="w-6 h-6" />}
             color="green"
             change={{ value: 8, type: 'increase', period: 'this week' }}
@@ -431,7 +431,7 @@ const CompanyDashboard: React.FC<CompanyDashboardProps> = ({ companyId }) => {
           />
           <StatsCard
             title="Avg. Time to Hire"
-            value={`${analytics?.performance?.averageTimeToHire ?? 0} days`}
+            value={`${analytics.performance.averageTimeToHire} days`}
             icon={<ClockIcon className="w-6 h-6" />}
             color="yellow"
             change={{ value: 15, type: 'decrease', period: 'last quarter' }}
@@ -439,7 +439,7 @@ const CompanyDashboard: React.FC<CompanyDashboardProps> = ({ companyId }) => {
           />
           <StatsCard
             title="Candidates Hired"
-            value={analytics?.applications?.hired ?? 0}
+            value={analytics.applications.hired}
             icon={<CheckCircleIcon className="w-6 h-6" />}
             color="purple"
             change={{ value: 25, type: 'increase', period: 'this quarter' }}
@@ -707,19 +707,19 @@ const CompanyDashboard: React.FC<CompanyDashboardProps> = ({ companyId }) => {
               <div className="space-y-3">
                 <div className="flex justify-between items-center p-4 bg-blue-50 dark:bg-blue-500/20 rounded-lg border border-blue-200 dark:border-blue-500/40">
                   <span className="text-gray-700 dark:text-white font-medium">Application Rate</span>
-                  <span className="font-bold text-blue-600 dark:text-blue-300 text-lg">{analytics?.performance?.applicationRate ?? 0}%</span>
+                  <span className="font-bold text-blue-600 dark:text-blue-300 text-lg">{analytics.performance.applicationRate}%</span>
                 </div>
                 <div className="flex justify-between items-center p-4 bg-green-50 dark:bg-green-500/20 rounded-lg border border-green-200 dark:border-green-500/40">
                   <span className="text-gray-700 dark:text-white font-medium">Interview to Hire</span>
-                  <span className="font-bold text-green-600 dark:text-green-300 text-lg">{analytics?.performance?.interviewToHireRatio ?? 0}</span>
+                  <span className="font-bold text-green-600 dark:text-green-300 text-lg">{analytics.performance.interviewToHireRatio}</span>
                 </div>
                 <div className="flex justify-between items-center p-4 bg-purple-50 dark:bg-purple-500/20 rounded-lg border border-purple-200 dark:border-purple-500/40">
                   <span className="text-gray-700 dark:text-white font-medium">Avg. Candidate Score</span>
-                  <span className="font-bold text-purple-600 dark:text-purple-300 text-lg">{analytics?.candidates?.averageScore ?? 0}%</span>
+                  <span className="font-bold text-purple-600 dark:text-purple-300 text-lg">{analytics.candidates.averageScore}%</span>
                 </div>
                 <div className="flex justify-between items-center p-4 bg-amber-50 dark:bg-amber-500/20 rounded-lg border border-amber-200 dark:border-amber-500/40">
                   <span className="text-gray-700 dark:text-white font-medium">Profile Views</span>
-                  <span className="font-bold text-amber-600 dark:text-amber-300 text-lg">{analytics?.candidates?.totalViewed ?? 0}</span>
+                  <span className="font-bold text-amber-600 dark:text-amber-300 text-lg">{analytics.candidates.totalViewed}</span>
                 </div>
               </div>
             </DashboardCard>
